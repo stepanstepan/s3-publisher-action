@@ -61,6 +61,7 @@ async function run(): Promise<void> {
         // Determine orphaned files
         if (deleteOrphan) {
             for (const remoteFile of remoteFilenames) {
+                console.log('TEST remoteFile', remoteFile);
                 if (!syncFiles.map(f => f.filename).includes(remoteFile) && !remoteFile.includes('blog/')) {
                     core.debug(`Add orphaned file to list ${remoteFile}`)
                     deletedFiles.push(remoteFile)
