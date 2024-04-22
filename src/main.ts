@@ -64,6 +64,7 @@ async function run(): Promise<void> {
                 if (
                     !syncFiles.map(f => f.filename).includes(remoteFile) &&
                     !remoteFile.includes('blog/') &&
+                    !remoteFile.includes('sitemaps/') &&
                     !remoteFile.includes('rss/')
                 ) {
                     core.debug(`Add orphaned file to list ${remoteFile}`)
